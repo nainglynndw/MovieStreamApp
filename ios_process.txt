@@ -1,0 +1,5 @@
+
+RVM
+ruby 
+bundle install
+pod install 

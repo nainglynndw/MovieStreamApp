@@ -1,28 +1,33 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import React from 'react';
 import {Colors} from '../Theme/Colors';
 import CategoryContainer from '../Components/CategoryContainer';
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Image
-          source={require('../assets/images/logo/logo.png')}
-          style={styles.logoImg}
-          resizeMode="contain"
-        />
-        <Text style={styles.appTitle}>Movie Stream App</Text>
-        <View style={styles.logoImg} />
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Image
+            source={require('../assets/images/logo/logo.png')}
+            style={styles.logoImg}
+            resizeMode="contain"
+          />
+          <Text style={styles.appTitle}>Movie Stream App</Text>
+          <View style={styles.logoImg} />
+        </View>
+        <CategoryContainer />
       </View>
-      <CategoryContainer />
-    </View>
+    </SafeAreaView>
   );
 };
 
 export default HomeScreen;
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
   container: {
     width: '100%',
     flex: 1,
